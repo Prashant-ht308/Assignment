@@ -1,0 +1,80 @@
+<div class="container">
+    <form [formGroup]="userForm" (ngSubmit)="submit()">
+      <div class="row p-1">
+        <!-- first Name  -->
+        <div class="col-md-2 col-sm-12">
+          <label for="fName">First Name <span class="text-danger">*</span></label>
+        </div>
+        <div class="col-md-10 mb-3">
+          <input type="text" class="form-control" formControlName="firstName" placeholder="First Name">
+        </div>
+
+        <!-- last name  -->
+        <div class="col-md-2 col-sm-12">
+          <label for="lastName">Last Name <span class="text-danger">*</span></label>
+        </div>
+        <div class="col-md-10 mb-3">
+          <input type="text" id="lastName" class="form-control" placeholder="Last Name" formControlName="lastName">
+        </div>
+
+        <!-- email  -->
+        <div class="col-md-2 col-sm-12">
+          <label for="email">Email</label>
+        </div>
+        <div class="col-md-10 mb-3">
+          <input type="text" id="email" class="form-control" placeholder="Email" formControlName="email">
+        </div>
+
+        <!-- phone  -->
+        <div class="col-md-2 col-sm-12">
+          <label for="mob">Phone</label>
+        </div>
+        <div class="col-md-10 mb-3">
+          <input type="text" id="mob" class="form-control" placeholder="Phone" formControlName="phone">
+        </div>
+
+        <!-- role  -->
+        <div class="col-md-2 col-sm-12">
+          <label for="mob">Role</label>
+        </div>
+        <div class="col-md-10 mb-3">
+          <select name="" id="" class="form-select" formControlName="role">
+            <option value="">select Role</option>
+            <option value="Admin">Admin</option>
+            <option value="User">User</option>
+          </select>
+        </div>
+
+        <!-- status  -->
+        <div class="col-md-2 col-sm-12">
+          <label for="mob">Status</label>
+        </div>
+        <div class="col-md-10 mb-3">
+          <select name="" id="" class="form-select" formControlName="status">
+            <option value="">Select status</option>
+            <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
+          </select>
+        </div>
+
+        <!-- password  -->
+        <div class="col-md-2 col-sm-12">
+          <label for="mob">Password</label>
+        </div>
+        <div class="col-md-10 mb-3">
+          <input type="text" id="mob" class="form-control" placeholder="Password" formControlName="password">
+        </div>
+
+        <!-- confirm password  -->
+        <div class="col-md-2 col-sm-12">
+          <label for="mob">Confirm Password</label>
+        </div>
+        <div class="col-md-10 mb-3">
+          <input type="text" id="mob" class="form-control" placeholder="Confirm Password" formControlName="confirmPassword">
+        </div>
+        <div class="col-md-12">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>

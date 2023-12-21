@@ -1,0 +1,35 @@
+<div class="container d-flex bg-white p-3">
+  <button mat-stroked-button class="me-2 mb-2" [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+    <mat-icon>sort_by_alpha</mat-icon> Sort By
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="descendingDateSort()">
+      <span>Last Updated</span>
+    </button>
+    <button mat-menu-item (click)="ascendingDateSort()">
+      <span>Created Date</span>
+    </button>
+    <button mat-menu-item (click)="ascendingSort()">
+      <span>A to Z</span>
+    </button>
+    <button mat-menu-item (click)="descendingSort()">
+      <span>Z to A</span>
+    </button>
+  </mat-menu>
+
+  <button mat-stroked-button [matMenuTriggerFor]="menu2" class="mb-2" aria-label="Example icon-button with a menu">
+    <mat-icon>filter_list</mat-icon> Filter By
+  </button>
+  <mat-menu #menu2="matMenu">
+    <button mat-menu-item (click)="admin()">
+      <span>Admin</span>
+    </button>
+    <button mat-menu-item (click)="user()">
+      <span>User</span>
+    </button>
+  </mat-menu>
+<span class="example-spacer"></span>
+  <div class="search">
+    <input type="text" class="form-control" [(ngModel)]="searchTerm" (ngModelChange)="searchedData()">
+  </div>
+</div>

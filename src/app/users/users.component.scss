@@ -1,0 +1,19 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.line{
+  color: rgb(151, 151, 151);
+}
+
+.home{
+  color: rgb(152, 0, 223);
+}
+.overflow-wrap-example {
+  width: 200px; /* Set a specific width for the container */
+  overflow: hidden; /* Hide any content that overflows the container */
+  white-space: normal; /* Allow text to wrap onto the next line */
+}
+
+.toggle{
+}

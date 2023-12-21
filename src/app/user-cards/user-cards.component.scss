@@ -1,0 +1,74 @@
+
+
+.row{
+  background-color: white;
+  // width: 80vw;
+}
+.card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 308px;
+  height: 107px;
+  margin: 6px;
+  overflow: hidden;
+  background-color: rgb(238, 236, 236);
+}
+
+.user-image {
+  width: 100%;
+}
+
+.card-block {
+  padding: 10px;
+}
+
+.name{
+  font-size: 1vw;
+}
+.email{
+  font-size: 0.8vw;
+}
+
+.status{
+  font-size: 0.9vw;
+}
+.options {
+margin-left: 50px;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.active {
+  background-color: green;
+}
+
+.inactive {
+  background-color: red;
+}
+
+.user-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-top: 20px;
+}
+
+@media (max-width : 600px) {
+  .name{
+    font-size: 3vw;
+  }
+  .email{
+    font-size: 2vw;
+  }
+
+  .card{
+    margin: 20px 40px 0;
+  }
+}

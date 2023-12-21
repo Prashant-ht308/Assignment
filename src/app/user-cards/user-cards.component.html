@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="sort">
+      <app-filter-sort (emitChildData)="getfilteredData($event)"></app-filter-sort>
+    </div>
+
+    <div class="card col-md-3 col-sm-12" *ngFor="let user of dataSource; let i = index">
+      <img mat-card-image class="user-image" src="{{ user.image }}" alt="avatar">
+      <div class="card-block">
+        <h5 class="name">{{ user.firstName + ' ' + user.lastName }}</h5>
+        <p class="email">{{ user.email }}</p>
+        <p class="status">
+          <span class="status-dot"
+          [ngClass]="{'active': user.status === 'Active', 'inactive': user.status === 'Inactive'}"></span>{{
+            user.status }}
+        </p>
+      </div>
+      <div class="options">
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item [routerLink]="['/users/add-user']" [queryParams]="{'id':user.id}">
+            <mat-icon>edit</mat-icon>
+            <span>Edit</span>
+          </button>
+          <button mat-menu-item (click)="deleteUser(i, user.id)">
+            <mat-icon>delete</mat-icon>
+            <span>Delete</span>
+          </button>
+        </mat-menu>
+      </div>
+    </div>
+  </div>
+</div>

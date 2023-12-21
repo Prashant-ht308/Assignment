@@ -1,0 +1,53 @@
+{
+  "users": [
+    {
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "john.doe@example.com",
+      "phone": "555-1234",
+      "role": "User",
+      "status": "Active",
+      "password": "securepass123",
+      "confirmPassword": "securepass123",
+      "id": 1
+    },
+    {
+      "firstName": "Mason",
+      "lastName": "Anderson",
+      "email": "mason.anderson@example.com",
+      "phone": "555-5555",
+      "role": "Admin",
+      "status": "Active",
+      "password": "adminpass123",
+      "confirmPassword": "adminpass123",
+      "createdOn": "2023-12-04T09:30:45.000Z",
+      "lastLogin": "3 weeks ago",
+      "image": "https://cdn-icons-png.flaticon.com/128/64/64572.png",
+      "id": 10
+    },
+    {
+      "firstName": "Andre",
+      "lastName": "Russell",
+      "email": "dreruss@gmail.com",
+      "phone": "1212124524521",
+      "role": "Admin",
+      "status": "Active",
+      "password": "121212",
+      "confirmPassword": "121212",
+      "image": "https://cdn-icons-png.flaticon.com/128/64/64572.png",
+      "id": 11
+    },
+    {
+      "firstName": "Json",
+      "lastName": "Roy",
+      "email": "jsonr@gmail.com",
+      "phone": "2354676787",
+      "role": "Admin",
+      "status": "Inactive",
+      "password": "1234",
+      "confirmPassword": "1234",
+      "createdOn": "2023-12-21T09:54:29.987Z",
+      "id": 12
+    }
+  ]
+}
