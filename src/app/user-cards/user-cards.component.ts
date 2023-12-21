@@ -1,9 +1,11 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { SharedService } from '../Services/shared.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { ToastrService } from 'ngx-toastr';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { DeleteDialogComponent } from '../delete-dialog/delete-dialog.component';
+import { MatTableDataSource } from '@angular/material/table';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-user-cards',
@@ -12,25 +14,20 @@ import { DeleteDialogComponent } from '../delete-dialog/delete-dialog.component'
 })
 export class UserCardsComponent implements OnInit{
 
-  constructor(private http:SharedService, private toastr:ToastrService, private dialog:MatDialog){}
+  constructor(private http:SharedService,private changeDetectorRef: ChangeDetectorRef, private toastr:ToastrService, private dialog:MatDialog){}
 
-  dataSource:any = []
   @ViewChild(MatPaginator) paginator!: MatPaginator;
+  obs!: Observable<any>;
+  dataSource!:any
 
   ngOnInit(){
     this.http.getData('users').subscribe((res:any)=>{
-      this.dataSource = res;
-      this.dataSource.paginator = this.paginator;
+      this.changeDetectorRef.detectChanges();
+      this.dataSource = new MatTableDataSource<any>(res);
+    this.dataSource.paginator = this.paginator;
+    this.obs = this.dataSource.connect();
     })
   }
-
-  // deleteUser(index:number, id:string){
-  //   const url = `users/${id}`;
-  //   this.http.deleteData(url).subscribe((res:any)=>{
-  //     this.dataSource.splice(index,1);
-  //     this.toastr.warning('User deleted successfully!');
-  //   })
-  // }
 
 
   deleteUser(index:number, id:string){
@@ -101,6 +98,5 @@ export class UserCardsComponent implements OnInit{
        return user.role == 'User';
      })
    }
-
 
 }

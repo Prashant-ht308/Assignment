@@ -4,7 +4,7 @@
       <app-filter-sort (emitChildData)="getfilteredData($event)"></app-filter-sort>
     </div>
 
-    <div class="card col-md-3 col-sm-12" *ngFor="let user of dataSource; let i = index">
+    <div class="card col-md-3 col-sm-12" *ngFor="let user of obs | async; let i = index">
       <img mat-card-image class="user-image" src="{{ user.image }}" alt="avatar">
       <div class="card-block">
         <h5 class="name">{{ user.firstName + ' ' + user.lastName }}</h5>
@@ -31,5 +31,6 @@
         </mat-menu>
       </div>
     </div>
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
   </div>
 </div>
