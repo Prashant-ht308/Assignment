@@ -7,7 +7,7 @@
   </div>
 
   <div class="mat-elevation-z8">
-    <table mat-table [dataSource]="dataSource" >
+    <table mat-table [dataSource]="dataSource | search : searchTerm" >
 
       <!-- checkbox Column -->
       <ng-container matColumnDef="checkbox">

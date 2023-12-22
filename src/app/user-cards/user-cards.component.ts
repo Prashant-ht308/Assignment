@@ -20,6 +20,7 @@ export class UserCardsComponent implements OnInit{
   obs!: Observable<any>;
   dataSource!:any
 
+  searchTerm:string = ''
   ngOnInit(){
     this.http.getData('users').subscribe((res:any)=>{
       this.changeDetectorRef.detectChanges();
@@ -29,6 +30,10 @@ export class UserCardsComponent implements OnInit{
     })
   }
 
+
+  getSearchTerm(searchData:any){
+    this.searchTerm = searchData;
+  }
 
   deleteUser(index:number, id:string){
     let config = new MatDialogConfig();

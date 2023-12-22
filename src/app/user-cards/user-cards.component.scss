@@ -1,41 +1,41 @@
 
-
-.row{
-  background-color: white;
-  // width: 80vw;
-}
-.card {
+.card{
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  width: 308px;
-  height: 107px;
-  margin: 6px;
-  overflow: hidden;
-  background-color: rgb(238, 236, 236);
+  justify-content: center;
+  max-width: 21em;
+  gap: 1em;
+  background-color: rgb(240, 240, 240);
+  padding-top: 5px;
+  padding-left: 10px;
 }
 
-.user-image {
+.content{
+  max-width: 11em;
+  margin-right: 2em;
+}
+
+.img{
+  align-self: center;
+}
+
+.card-list{
+  display: flex;
+  gap: 1em;
   width: 100%;
+  padding-left: 2em;
+  flex-wrap: wrap;
+  background-color: white;
 }
 
-.card-block {
-  padding: 10px;
-}
-
-.name{
-  font-size: 1vw;
-}
-.email{
-  font-size: 0.8vw;
+.paginator{
+  align-self: flex-end;
 }
 
 .status{
   font-size: 0.9vw;
 }
-.options {
-margin-left: 50px;
-}
+
 
 .status-dot {
   width: 10px;
@@ -53,24 +53,65 @@ margin-left: 50px;
   background-color: red;
 }
 
-.user-image {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin-top: 20px;
+.options{
+  margin-bottom: 3em;
 }
+// .row{
+  //   background-color: white;
+  //   // width: 80vw;
+  // }
+// .card {
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-between;
+//   width: 308px;
+//   height: 107px;
+//   margin: 6px;
+//   overflow: hidden;
+//   background-color: rgb(238, 236, 236);
+// }
 
-@media (max-width : 600px) {
-  .name{
-    font-size: 3vw;
-  }
-  .email{
-    font-size: 2vw;
-  }
+// .user-image {
+//   width: 100%;
+// }
 
-  .card{
-    margin: 20px 40px 0;
-  }
-}
+// .card-block {
+//   padding: 10px;
+// }
+
+// .name{
+//   font-size: 1vw;
+// }
+// .email{
+//   font-size: 0.8vw;
+// }
+
+// .status{
+//   font-size: 0.9vw;
+// }
+// .options {
+// margin-left: 50px;
+// }
+
+
+// .user-image {
+//   width: 50px;
+//   height: 50px;
+//   border-radius: 50%;
+//   margin-top: 20px;
+// }
+
+// @media (max-width : 600px) {
+//   .name{
+//     font-size: 3vw;
+//   }
+//   .email{
+//     font-size: 2vw;
+//   }
+
+//   .card{
+//     margin: 20px 40px 0;
+//   }
+// }
 
 

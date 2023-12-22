@@ -20,7 +20,7 @@ const routes: Routes = [
       { path: 'user-card', component: UserCardsComponent },
     ]
   },
-  // {path : '', redirectTo : '', pathMatch : "full"},
+  {path : '', redirectTo : 'users', pathMatch : "full"},
   {path : '**', component : PagenotfoundComponent}
 
 ];

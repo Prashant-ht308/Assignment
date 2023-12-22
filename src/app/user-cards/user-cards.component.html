@@ -1,10 +1,51 @@
-<div class="container">
+<app-filter-sort (emitChildData)="getfilteredData($event)" (searchedDataEmitter)="getSearchTerm($event)"></app-filter-sort>
+<div class="card-list">
+    <div class="card" *ngFor="let user of obs | async | search : searchTerm; let i = index">
+      <div class="img">
+        <img width="60" src="{{ user.image }}" alt="">
+      </div>
+      <div class="content">
+        <h6>{{user.firstName + " " + user.lastName}}</h6>
+        <p>{{user.email}}</p>
+        <p class="status">
+          <span class="status-dot"
+          [ngClass]="{'active': user.status === 'Active', 'inactive': user.status === 'Inactive'}"></span>{{
+            user.status }}
+        </p>
+      </div>
+      <div>
+        <button mat-icon-button [matMenuTriggerFor]="menu" >
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item [routerLink]="['/users/add-user']" [queryParams]="{'id':user.id}">
+            <mat-icon>edit</mat-icon>
+            <span>Edit</span>
+          </button>
+          <button mat-menu-item (click)="deleteUser(i, user.id)">
+            <mat-icon>delete</mat-icon>
+            <span>Delete</span>
+          </button>
+        </mat-menu>
+      </div>
+    </div>
+  </div>
+  <mat-paginator [pageSizeOptions]="[6, 10, 25, 100]" class="paginator"></mat-paginator>
+
+
+
+
+
+
+
+
+<!-- <div class="container">
   <div class="row">
     <div class="sort">
-      <app-filter-sort (emitChildData)="getfilteredData($event)"></app-filter-sort>
+      <app-filter-sort (emitChildData)="getfilteredData($event)" (searchedDataEmitter)="getSearchTerm($event)"></app-filter-sort>
     </div>
 
-    <div class="card col-md-3 col-sm-12" *ngFor="let user of obs | async; let i = index">
+    <div class="card col-md-3 col-sm-12" *ngFor="let user of obs | async | search : searchTerm; let i = index">
       <img mat-card-image class="user-image" src="{{ user.image }}" alt="avatar">
       <div class="card-block">
         <h5 class="name">{{ user.firstName + ' ' + user.lastName }}</h5>
@@ -33,4 +74,12 @@
     </div>
     <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
   </div>
-</div>
+</div> -->
+
+
+
+
+
+
+
+
