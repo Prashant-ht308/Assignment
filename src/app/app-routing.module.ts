@@ -10,22 +10,29 @@ import { UsersComponent } from './users/users.component';
 import { SigninComponent } from './signin/signin.component';
 
 const routes: Routes = [
-  {path : 'user-widget', component : UserWidgetComponentComponent},
-  {path : 'signIn', component : SigninComponent},
-  {path : 'dashboard', component : DashboardComponent},
   {
-    path: 'users',
-    component: UsersComponent,
+    path: 'user-widget',
+    component: UserWidgetComponentComponent,
     children: [
-      { path: '', redirectTo: 'user-list', pathMatch: 'full' },
-      { path: 'user-list', component: UserListComponent },
-      { path: 'add-user', component: AddUserComponent },
-      { path: 'user-card', component: UserCardsComponent },
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+      { path: 'dashboard', component: DashboardComponent },
+      {
+        path: 'users',
+        component: UsersComponent,
+        children: [
+          { path: '', redirectTo: 'user-list', pathMatch: 'full' },
+          { path: 'user-list', component: UserListComponent },
+          { path: 'add-user', component: AddUserComponent },
+          { path: 'edit-user', component: AddUserComponent },
+          { path: 'user-card', component: UserCardsComponent },
+        ]
+      },
     ]
   },
-  {path : '', redirectTo : 'signIn', pathMatch : "full"},
-  {path : '**', component : PagenotfoundComponent}
-
+  {path : 'signUp', component : AddUserComponent},
+  { path: 'signIn', component: SigninComponent },
+  { path: '', redirectTo: 'signIn', pathMatch: 'full' },
+  { path: '**', component: PagenotfoundComponent }
 ];
 
 @NgModule({

@@ -36,14 +36,14 @@ export class SigninComponent implements OnInit {
     const matchingUser = this.userCredentials.find((user:any)=>{
       return user.email == email && user.password == password
     })
-    localStorage.setItem('currentUser',this.signInForm.get('email')?.value);
 
     if(matchingUser){
       console.log("user matched")
+      localStorage.setItem('currentUser',matchingUser.id);
       this.router.navigate(['/user-widget']);
     }else{
       console.log('no user found')
-      this.router.navigate(['/users/add-user'])
+      this.router.navigate(['signUp'])
     }
 
 

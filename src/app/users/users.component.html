@@ -1,7 +1,8 @@
 <mat-toolbar class="bg-transparent">
   <span class="fw-bold fs-5">Users</span>
   <span class="example-spacer"></span>
-  <div *ngIf="router.url == '/users/user-list' || router.url == '/users/user-card'; else elseBlock">
+  <div
+    *ngIf="router.url == '/user-widget/users/user-list' || router.url == '/user-widget/users/user-card'; else elseBlock">
     <mat-button-toggle-group #group="matButtonToggleGroup" class="toggle">
       <mat-button-toggle routerLink="user-list" routerLinkActive="active">
         <mat-icon>list</mat-icon>
@@ -14,14 +15,16 @@
     <button class="ms-2" mat-raised-button color="primary" routerLink="add-user">+ Add User</button>
   </div>
   <ng-template #elseBlock>
-<span class="me-1 home mt-1"><mat-icon>home</mat-icon></span>
-<span class="me-3 line">{{url.slice(0,1)}}</span>
-<span class="fw-medium me-3">{{url.slice(1,6).toUpperCase()}}</span>
-<span class=" me-3 line">{{url.slice(6,7)}}</span>
-<span class="fw-light">{{url.slice(7).toUpperCase()}}</span>
+    <span class="me-1 home mt-1"><mat-icon>home</mat-icon></span>
+    <span class="me-3 line">{{url.slice(0,1)}}</span>
+    <span class="fw-medium me-3">{{url.slice(13,18)}}</span>
+    <span class=" me-3 line">{{url.slice(18,19)}}</span>
+    <span class="fw-light">
+      <ng-container *ngIf="urlService.currentUrl.includes('add-user')">Add User</ng-container>
+      <ng-container *ngIf="urlService.currentUrl.includes('edit-user')">Edit User</ng-container>
+    </span>
+
   </ng-template>
 
 </mat-toolbar>
 <router-outlet></router-outlet>
-
-

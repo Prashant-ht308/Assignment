@@ -7,29 +7,32 @@
           </div>
             <h4 class="fs-6 ms-3">Main Menu</h4>
           <ul class="list">
-            <li routerLinkActive="active"><mat-icon>home</mat-icon><a routerLink="/dashboard" >Dashboard</a></li>
-            <li routerLinkActive="active"><mat-icon>person</mat-icon><a routerLink="/users">Users</a></li>
+            <li routerLinkActive="active"><mat-icon>home</mat-icon><a routerLink="/user-widget/dashboard" >Dashboard</a></li>
+            <li routerLinkActive="active"><mat-icon>person</mat-icon><a routerLink="/user-widget/users">Users</a></li>
           </ul>
         </mat-drawer>
 
         <div class="example-sidenav-content">
             <mat-toolbar class="toolbar">
-                <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="drawer.toggle()">
+                <button mat-icon-button class="example-icon" (click)="drawer.toggle()">
                  <mat-icon> notes</mat-icon>
                </button>
                <span class="example-spacer"></span>
-               <div class="card">
-                  account holder details
+               <div class="currentUser">
+                <div class="img">
+                  <img width="50" src="{{currentUserDetails.image}}" alt="">
+                </div>
+                  <div class="content">
+                    <h6 class="userName">{{currentUserDetails.firstName}}</h6>
+                    <p class="role">{{currentUserDetails.role}}</p>
+                  </div>
                </div>
              </mat-toolbar>
 
              <div class="container">
-
-             </div>
-
-             <div class="container">
               <router-outlet></router-outlet>
              </div>
+
         </div>
       </mat-drawer-container>
 
