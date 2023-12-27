@@ -18,7 +18,7 @@
                  <mat-icon> notes</mat-icon>
                </button>
                <span class="example-spacer"></span>
-               <div class="currentUser">
+               <div class="currentUser" *ngIf="currentUserDetails">
                 <div class="img">
                   <img width="50" src="{{currentUserDetails.image}}" alt="">
                 </div>
