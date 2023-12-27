@@ -23,7 +23,6 @@
   display: flex;
   gap: 1em;
   width: 100%;
-  padding-left: 2em;
   flex-wrap: wrap;
   background-color: white;
 }
@@ -55,6 +54,14 @@
 
 .options{
   margin-bottom: 3em;
+}
+
+.fullName{
+  font-size: 1em;
+}
+
+.email{
+  font-size: 1em;
 }
 // .row{
   //   background-color: white;

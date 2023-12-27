@@ -5,8 +5,8 @@
         <img width="60" src="{{ user.image }}" alt="">
       </div>
       <div class="content">
-        <h6>{{user.firstName + " " + user.lastName}}</h6>
-        <p>{{user.email}}</p>
+        <h6 class="fullName">{{user.firstName + " " + user.lastName}}</h6>
+        <p class="email">{{user.email}}</p>
         <p class="status">
           <span class="status-dot"
           [ngClass]="{'active': user.status === 'Active', 'inactive': user.status === 'Inactive'}"></span>{{

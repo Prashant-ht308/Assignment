@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { SharedService } from '../Services/shared.service';
 
 @Component({
@@ -28,6 +28,14 @@ export class DashboardComponent implements OnInit {
     });
   }
 
-
+  @Input() barChartData: any[] = [];
+  @Input() barChartLabels: string[] = [];
+  // You can customize or extend options, legend, and chart type as needed
+  barChartOptions: any = {
+    scaleShowVerticalLines: false,
+    responsive: true,
+  };
+  barChartLegend = true;
+  barChartType = 'bar';
 
 }

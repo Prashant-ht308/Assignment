@@ -15,5 +15,7 @@
   white-space: normal; /* Allow text to wrap onto the next line */
 }
 
-.toggle{
+.active{
+  background-color: rgb(152, 0, 223);
+  color: white;
 }

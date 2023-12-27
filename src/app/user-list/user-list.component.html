@@ -6,8 +6,8 @@
     <app-filter-sort (emitChildData)="getfilteredData($event)" (searchedDataEmitter)="getSearchData($event)"></app-filter-sort>
   </div>
 
-  <div class="mat-elevation-z8">
-    <table mat-table [dataSource]="data | async | search : searchTerm" >
+  <div class="">
+    <table mat-table class="" [dataSource]="data | async | search : searchTerm" >
 
       <!-- checkbox Column -->
       <ng-container matColumnDef="checkbox">
