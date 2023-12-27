@@ -7,8 +7,11 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { UserCardsComponent } from './user-cards/user-cards.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UsersComponent } from './users/users.component';
+import { SigninComponent } from './signin/signin.component';
 
 const routes: Routes = [
+  {path : 'user-widget', component : UserWidgetComponentComponent},
+  {path : 'signIn', component : SigninComponent},
   {path : 'dashboard', component : DashboardComponent},
   {
     path: 'users',
@@ -20,7 +23,7 @@ const routes: Routes = [
       { path: 'user-card', component: UserCardsComponent },
     ]
   },
-  {path : '', redirectTo : 'users', pathMatch : "full"},
+  {path : '', redirectTo : 'signIn', pathMatch : "full"},
   {path : '**', component : PagenotfoundComponent}
 
 ];

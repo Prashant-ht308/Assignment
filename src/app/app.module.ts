@@ -18,6 +18,8 @@ import { SearchPipe } from './search.pipe';
 import { FilterSortComponent } from './filter-sort/filter-sort.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UsersComponent } from './users/users.component';
+import { SignupComponent } from './signup/signup.component';
+import { SigninComponent } from './signin/signin.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { UsersComponent } from './users/users.component';
     SearchPipe,
     FilterSortComponent,
     DashboardComponent,
-    UsersComponent
+    UsersComponent,
+    SignupComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
