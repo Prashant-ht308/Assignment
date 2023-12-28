@@ -75,16 +75,16 @@
   .currentUser{
     display: flex;
     gap: 0.5em;
-    margin-top: 1.5em;
-    margin-bottom: 1em;
+    margin-top: 2em;
     padding: 5px;
     justify-content: center;
   }
 
+  .content{
+    margin-bottom: 2em;
+  }
   .userName{
     font-size: 0.9em;
-    padding: 0;
-    margin: 0;
   }
 
   .role{
@@ -93,7 +93,8 @@
     margin: 0;
   }
 
-
   .img img{
     border-radius: 50%;
+    margin-top: 0.5em;
   }
+

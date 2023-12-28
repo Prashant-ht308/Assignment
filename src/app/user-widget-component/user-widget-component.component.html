@@ -23,7 +23,15 @@
                   <img width="50" src="{{currentUserDetails.image}}" alt="">
                 </div>
                   <div class="content">
-                    <h6 class="userName">{{currentUserDetails.firstName}}</h6>
+                    <h6 class="userName">{{currentUserDetails.firstName}}<button mat-flat-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                      <mat-icon>arrow_drop_down</mat-icon>
+                    </button></h6>
+                    <mat-menu #menu="matMenu">
+                      <button mat-menu-item (click)="logout()">
+                        <mat-icon>logout</mat-icon>
+                        <span>Signout</span>
+                      </button>
+                    </mat-menu>
                     <p class="role">{{currentUserDetails.role}}</p>
                   </div>
                </div>

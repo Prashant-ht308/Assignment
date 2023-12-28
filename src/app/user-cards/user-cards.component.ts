@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
-import { SharedService } from '../Services/shared.service';
+import { SharedService } from '../Service/shared.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { ToastrService } from 'ngx-toastr';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';

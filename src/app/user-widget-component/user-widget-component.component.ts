@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { SharedService } from '../Services/shared.service';
+import { SharedService } from '../Service/shared.service';
+import { AuthService } from '../Service/auth.service';
 
 @Component({
   selector: 'app-user-widget-component',
@@ -9,7 +10,7 @@ import { SharedService } from '../Services/shared.service';
 })
 export class UserWidgetComponentComponent implements OnInit {
 
-  constructor(private http:SharedService,public router:Router){}
+  constructor(private http:SharedService, public router:Router, private authService:AuthService){}
 
   showFiller:boolean = false;
 
@@ -26,6 +27,11 @@ export class UserWidgetComponentComponent implements OnInit {
     this.http.getData(url).subscribe((res:any)=>{
       this.currentUserDetails = res;
     })
+  }
+
+  logout(){
+    this.router.navigate(['/signIn'])
+    return this.authService.logout();
   }
 
 }

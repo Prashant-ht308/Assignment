@@ -8,11 +8,13 @@ import { UserCardsComponent } from './user-cards/user-cards.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UsersComponent } from './users/users.component';
 import { SigninComponent } from './signin/signin.component';
+import { UserAuthGuard } from './Guards/user-auth.guard';
 
 const routes: Routes = [
   {
     path: 'user-widget',
     component: UserWidgetComponentComponent,
+    canActivate : [UserAuthGuard],
     children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },

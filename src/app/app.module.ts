@@ -20,6 +20,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { UsersComponent } from './users/users.component';
 import { SignupComponent } from './signup/signup.component';
 import { SigninComponent } from './signin/signin.component';
+import { HighchartsChartModule } from 'highcharts-angular';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { SigninComponent } from './signin/signin.component';
     DashboardComponent,
     UsersComponent,
     SignupComponent,
-    SigninComponent
+    SigninComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -46,6 +48,7 @@ import { SigninComponent } from './signin/signin.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    HighchartsChartModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { SharedService } from '../Services/shared.service';
+import { SharedService } from '../Service/shared.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../Service/auth.service';
 
 @Component({
   selector: 'app-signin',
@@ -12,7 +13,7 @@ export class SigninComponent implements OnInit {
 
   signInForm!:FormGroup;
   userCredentials:any;
-  constructor(private fb:FormBuilder, private http:SharedService, private router:Router){}
+  constructor(private fb:FormBuilder, private http:SharedService, private router:Router, private authService:AuthService){}
 
   ngOnInit(){
     this.signInForm = this.fb.group({
@@ -26,25 +27,33 @@ export class SigninComponent implements OnInit {
 
 
   }
-
   currentUser:string = '';
-
   signIn(){
     const email:string = this.signInForm.get('email')?.value;
     const password:string = this.signInForm.get('password')?.value;
 
-    const matchingUser = this.userCredentials.find((user:any)=>{
-      return user.email == email && user.password == password
-    })
+    const isAuthenticated = this.authService.login(email, password);
 
-    if(matchingUser){
-      console.log("user matched")
-      localStorage.setItem('currentUser',matchingUser.id);
+    if(isAuthenticated){
+      console.log("User Matched");
       this.router.navigate(['/user-widget']);
     }else{
-      console.log('no user found')
-      this.router.navigate(['signUp'])
+      alert("No user found")
+      this.router.navigate(['/signUp'])
     }
+
+    // const matchingUser = this.userCredentials.find((user:any)=>{
+    //   return user.email == email && user.password == password
+    // })
+
+    // if(matchingUser){
+    //   console.log("user matched")
+    //   localStorage.setItem('currentUser',matchingUser.id);
+    //   this.router.navigate(['/user-widget']);
+    // }else{
+    //   console.log('no user found')
+    //   this.router.navigate(['signUp'])
+    // }
 
 
   }

@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import { SharedService } from '../Services/shared.service';
+import { SharedService } from '../Service/shared.service';
 import { MatPaginator } from '@angular/material/paginator';
 
 @Component({

@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { SharedService } from '../Services/shared.service';
+import { SharedService } from '../Service/shared.service';
 import { ToastrService } from 'ngx-toastr';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort} from '@angular/material/sort';
