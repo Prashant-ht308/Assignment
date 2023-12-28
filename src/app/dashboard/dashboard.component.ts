@@ -77,9 +77,9 @@ export class DashboardComponent implements OnInit {
   // updateChartData(){
 
   //   this.chartData = this.activeUsers.map((user: any) => ({
-  //     name: this.getMonth(user.createdOn),  // Extract the month from the creation date
-  //     y: 1,              // Assuming each user counts as 1 for the demonstration
-  //     // You can add additional properties as needed
+  //     name: this.getMonth(user.createdOn),
+  //     y: 1,
+  //
   //   }));
   // }
 

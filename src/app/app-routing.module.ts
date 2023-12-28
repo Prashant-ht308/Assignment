@@ -9,6 +9,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { UsersComponent } from './users/users.component';
 import { SigninComponent } from './signin/signin.component';
 import { UserAuthGuard } from './Guards/user-auth.guard';
+import { SignupComponent } from './signup/signup.component';
 
 const routes: Routes = [
   {
@@ -31,7 +32,7 @@ const routes: Routes = [
       },
     ]
   },
-  {path : 'signUp', component : AddUserComponent},
+  {path : 'signUp', component : SignupComponent},
   { path: 'signIn', component: SigninComponent },
   { path: '', redirectTo: 'signIn', pathMatch: 'full' },
   { path: '**', component: PagenotfoundComponent }

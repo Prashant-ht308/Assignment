@@ -31,6 +31,7 @@ export class UserWidgetComponentComponent implements OnInit {
 
   logout(){
     this.router.navigate(['/signIn'])
+    localStorage.removeItem('currentUser');
     return this.authService.logout();
   }
 

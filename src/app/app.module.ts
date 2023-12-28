@@ -21,6 +21,7 @@ import { UsersComponent } from './users/users.component';
 import { SignupComponent } from './signup/signup.component';
 import { SigninComponent } from './signin/signin.component';
 import { HighchartsChartModule } from 'highcharts-angular';
+import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { HighchartsChartModule } from 'highcharts-angular';
     UsersComponent,
     SignupComponent,
     SigninComponent,
+    ForgetPasswordComponent,
 
   ],
   imports: [

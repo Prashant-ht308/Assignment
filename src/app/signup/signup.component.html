@@ -1,1 +1,109 @@
-<p>signup works!</p>
+<div class="container h-100 d-flex justify-content-center align-items-center">
+<div class="container2 w-75 p-4 rounded-3">
+  <form [formGroup]="userForm" (ngSubmit)="submit()">
+    <div class="row p-1">
+      <!-- first Name  -->
+      <div class="col-md-2 col-sm-12">
+        <label for="fName">First Name <span class="text-danger">*</span></label>
+      </div>
+      <div class="col-md-10 mb-3">
+        <input type="text" class="form-control" formControlName="firstName" placeholder="First Name">
+        <div class="row" *ngIf="u['firstName']?.touched && u['firstName']?.invalid">
+          <div class="invalid-feedback d-block" *ngIf="u['firstName']?.errors?.['required']">This field is required</div>
+        </div>
+      </div>
+
+      <!-- last name  -->
+      <div class="col-md-2 col-sm-12">
+        <label for="lastName">Last Name <span class="text-danger">*</span></label>
+      </div>
+      <div class="col-md-10 mb-3">
+        <input type="text" id="lastName" class="form-control" placeholder="Last Name" formControlName="lastName">
+        <div class="row" *ngIf="u['lastName']?.touched && u['lastName']?.invalid">
+          <div class="invalid-feedback d-block" *ngIf="u['lastName']?.errors?.['required']">This field is required</div>
+        </div>
+      </div>
+
+      <!-- email  -->
+      <div class="col-md-2 col-sm-12">
+        <label for="email">Email</label>
+      </div>
+      <div class="col-md-10 mb-3">
+        <input type="text" id="email" class="form-control" placeholder="Email" formControlName="email">
+        <div class="row" *ngIf="u['email']?.touched && u['email']?.invalid">
+          <div class="invalid-feedback d-block" *ngIf="u['email']?.errors?.['required']">This field is required</div>
+          <div class="invalid-feedback d-block" *ngIf="u['email']?.errors?.['email']">Enter a valid email</div>
+        </div>
+      </div>
+
+      <!-- phone  -->
+      <div class="col-md-2 col-sm-12">
+        <label for="mob">Phone</label>
+      </div>
+      <div class="col-md-10 mb-3">
+        <input type="text" id="mob" class="form-control" placeholder="Phone" formControlName="phone">
+        <div class="row" *ngIf="u['phone']?.touched && u['phone']?.invalid">
+          <div class="invalid-feedback d-block" *ngIf="u['phone']?.errors?.['required']">This field is required</div>
+          <div class="invalid-feedback d-block" *ngIf="u['phone']?.errors?.['pattern']">Enter 10 digit phone number</div>
+        </div>
+      </div>
+
+      <!-- role  -->
+      <div class="col-md-2 col-sm-12">
+        <label for="mob">Role</label>
+      </div>
+      <div class="col-md-10 mb-3">
+        <select name="" id="" class="form-select" formControlName="role">
+          <option value="">select Role</option>
+          <option value="Admin">Admin</option>
+          <option value="User">User</option>
+        </select>
+        <div class="row" *ngIf="u['role']?.touched && u['role']?.invalid">
+          <div class="invalid-feedback d-block" *ngIf="u['role']?.errors?.['required']">This field is required</div>
+        </div>
+      </div>
+
+      <!-- status  -->
+      <div class="col-md-2 col-sm-12">
+        <label for="mob">Status</label>
+      </div>
+      <div class="col-md-10 mb-3">
+        <select name="" id="" class="form-select" formControlName="status">
+          <option value="">Select status</option>
+          <option value="Active">Active</option>
+          <option value="Inactive">Inactive</option>
+        </select>
+        <div class="row" *ngIf="u['status']?.touched && u['status']?.invalid">
+          <div class="invalid-feedback d-block" *ngIf="u['status']?.errors?.['required']">This field is required</div>
+        </div>
+      </div>
+
+      <!-- password  -->
+      <div class="col-md-2 col-sm-12">
+        <label for="mob">Password</label>
+      </div>
+      <div class="col-md-10 mb-3">
+        <input type="text" id="mob" class="form-control" placeholder="Password" formControlName="password">
+        <div class="row" *ngIf="u['password']?.touched && u['password']?.invalid">
+          <div class="invalid-feedback d-block" *ngIf="u['password']?.errors?.['required']">This field is required</div>
+        </div>
+      </div>
+
+      <!-- confirm password  -->
+      <div class="col-md-2 col-sm-12">
+        <label for="mob">Confirm Password</label>
+      </div>
+      <div class="col-md-10 mb-3">
+        <input type="text" id="mob" class="form-control" placeholder="Confirm Password" formControlName="confirmPassword">
+        <div class="row" *ngIf="u['confirmPassword']?.touched && u['confirmPassword']?.invalid">
+          <div class="invalid-feedback d-block" *ngIf="u['confirmPassword']?.errors?.['required']">This field is required</div>
+          <div class="invalid-feedback d-block" *ngIf="u['confirmPassword']?.errors?.['passwordNotMatch']">Password doesn't match</div>
+        </div>
+      </div>
+      <div class="col-md-12 text-center mt-2">
+        <button type="submit" class="btn btn-dark w-75" [disabled]="userForm.invalid">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>
+</div>

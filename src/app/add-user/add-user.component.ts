@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SharedService } from '../Service/shared.service';
 import { ToastrService } from 'ngx-toastr';
 import { ActivatedRoute, Router } from '@angular/router';
-
+import { passwordValidator } from '../passwordValidator';
 @Component({
   selector: 'app-add-user',
   templateUrl: './add-user.component.html',
@@ -29,18 +29,25 @@ export class AddUserComponent implements OnInit {
     if (this.selectedId) {
       this.editData();
     }
+
+    this.userForm.get('password')?.valueChanges.subscribe((pass:any)=>{
+      this.userForm.get('confirmPassword')?.updateValueAndValidity();
+    })
   }
 
+  get u(){
+    return this.userForm.controls
+  }
   addUser() {
     this.userForm = this.fb.group({
       firstName: ['', [Validators.required]],
       lastName: ['', [Validators.required]],
-      email: ['', [Validators.required]],
-      phone: ['', []],
-      role: ['', []],
-      status: ['', []],
+      email: ['', [Validators.required, Validators.email]],
+      phone: ['', [Validators.required, Validators.pattern("^[0-9]{10}$")]],
+      role: ['', [Validators.required]],
+      status: ['', [Validators.required]],
       password: ['', [Validators.required]],
-      confirmPassword: ['', [Validators.required]],
+      confirmPassword: ['', [Validators.required, passwordValidator]],
     });
   }
 
