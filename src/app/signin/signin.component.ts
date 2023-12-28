@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SharedService } from '../Service/shared.service';
 import { Router } from '@angular/router';
 import { AuthService } from '../Service/auth.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-signin',
@@ -13,11 +14,11 @@ export class SigninComponent implements OnInit {
 
   signInForm!:FormGroup;
   userCredentials:any;
-  constructor(private fb:FormBuilder, private http:SharedService, private router:Router, private authService:AuthService){}
+  constructor(private fb:FormBuilder, private http:SharedService, private router:Router, private authService:AuthService, private toastr:ToastrService){}
 
   ngOnInit(){
     this.signInForm = this.fb.group({
-      "email" : ['',[Validators.required]],
+      "email" : ['',[Validators.required, Validators.email]],
       "password" : ['',[Validators.required]]
     });
 
@@ -38,8 +39,7 @@ export class SigninComponent implements OnInit {
       console.log("User Matched");
       this.router.navigate(['/user-widget']);
     }else{
-      alert("No user found")
-      this.router.navigate(['/signUp'])
+      this.toastr.error('User not found try again!')
     }
 
     // const matchingUser = this.userCredentials.find((user:any)=>{
@@ -54,7 +54,10 @@ export class SigninComponent implements OnInit {
     //   console.log('no user found')
     //   this.router.navigate(['signUp'])
     // }
-
-
   }
+
+  get u(){
+    return this.signInForm.controls;
+  }
+
 }
