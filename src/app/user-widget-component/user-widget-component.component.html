@@ -13,7 +13,7 @@
         </mat-drawer>
 
         <div class="example-sidenav-content">
-            <mat-toolbar class="toolbar">
+            <mat-toolbar class="toolbar" *ngIf="!showToolbar">
                 <button mat-icon-button class="example-icon" (click)="drawer.toggle()">
                  <mat-icon> notes</mat-icon>
                </button>
@@ -23,7 +23,7 @@
                   <img width="50" src="{{currentUserDetails.image}}" alt="">
                 </div>
                   <div class="content">
-                    <h6 class="userName">{{currentUserDetails.firstName}}<button mat-flat-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                    <h6 class="userName">{{currentUserDetails.firstName}}<button mat-flat-button [matMenuTriggerFor]="menu">
                       <mat-icon>arrow_drop_down</mat-icon>
                     </button></h6>
                     <mat-menu #menu="matMenu">
@@ -35,6 +35,18 @@
                     <p class="role">{{currentUserDetails.role}}</p>
                   </div>
                </div>
+             </mat-toolbar>
+
+             <mat-toolbar *ngIf="showToolbar" class="toolbar">
+              <img src="../../assets/logo.png" height="50" alt="logo">
+              <span class="example-spacer"></span>
+              <button mat-flat-button [matMenuTriggerFor]="menu">
+                <mat-icon>notes</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu">
+                  <button mat-menu-item routerLinkActive="active" routerLink="/user-widget/dashboard">Dashboard</button>
+                  <button mat-menu-item routerLinkActive="active" routerLink="/user-widget/users">Users</button>
+              </mat-menu>
              </mat-toolbar>
 
              <div class="container">

@@ -1,7 +1,12 @@
 <div class="container">
-  <button mat-stroked-button class="me-2 mb-2" [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+  <button mat-stroked-button *ngIf="!isSmallScreen" class="me-2 mb-2 bg-secondary-subtle"[matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
     <mat-icon>sort_by_alpha</mat-icon> Sort By
   </button>
+  <button mat-stroked-button class="me-2 mb-2 bg-secondary-subtle" *ngIf="isSmallScreen" [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+    <mat-icon>sort_by_alpha</mat-icon>
+  </button>
+
+
   <mat-menu #menu="matMenu">
     <button mat-menu-item (click)="descendingDateSort()">
       <span>Last Updated</span>
@@ -17,8 +22,11 @@
     </button>
   </mat-menu>
 
-  <button mat-stroked-button [matMenuTriggerFor]="menu2" class="mb-2" aria-label="Example icon-button with a menu">
+  <button mat-stroked-button [matMenuTriggerFor]="menu2" *ngIf="!isSmallScreen"  class="mb-2 bg-secondary-subtle" aria-label="Example icon-button with a menu">
     <mat-icon>filter_list</mat-icon> Filter By
+  </button>
+  <button mat-stroked-button [matMenuTriggerFor]="menu2" *ngIf="isSmallScreen" class="mb-2 bg-secondary-subtle" aria-label="Example icon-button with a menu">
+    <mat-icon>filter_list</mat-icon>
   </button>
   <mat-menu #menu2="matMenu">
     <button mat-menu-item (click)="admin()">
@@ -30,6 +38,14 @@
   </mat-menu>
 <span class="example-spacer"></span>
   <div class="search">
-    <input type="text" class="form-control" [(ngModel)]="searchTerm" (ngModelChange)="searchedData()">
+    <!-- <mat-icon class="search-icon">search</mat-icon> -->
+    <input type="text" class="form-control bg-secondary-subtle" *ngIf="!isSmallScreen"  placeholder="Search here..." [(ngModel)]="searchTerm" (ngModelChange)="searchedData()">
+    <button mat-stroked-button [matMenuTriggerFor]="search" *ngIf="isSmallScreen" class="mb-2 bg-secondary-subtle" aria-label="Example icon-button with a menu">
+      <mat-icon>search</mat-icon>
+    </button>
+    <mat-menu #search="matMenu">
+      <input type="text" class="form-control bg-secondary-subtle"  placeholder="Search here..." [(ngModel)]="searchTerm" (ngModelChange)="searchedData()">
+    </mat-menu>
   </div>
 </div>
+

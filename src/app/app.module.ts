@@ -14,7 +14,7 @@ import { UserListComponent } from './user-list/user-list.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { UserCardsComponent } from './user-cards/user-cards.component';
 import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
-import { SearchPipe } from './search.pipe';
+import { SearchPipe } from './Pipes/search.pipe';
 import { FilterSortComponent } from './filter-sort/filter-sort.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UsersComponent } from './users/users.component';
@@ -22,6 +22,8 @@ import { SignupComponent } from './signup/signup.component';
 import { SigninComponent } from './signin/signin.component';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
+import { LastloginPipe } from './Pipes/lastlogin.pipe';
+import {LayoutModule} from '@angular/cdk/layout';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,7 @@ import { ForgetPasswordComponent } from './forget-password/forget-password.compo
     SignupComponent,
     SigninComponent,
     ForgetPasswordComponent,
-
+    LastloginPipe
   ],
   imports: [
     BrowserModule,
@@ -50,7 +52,8 @@ import { ForgetPasswordComponent } from './forget-password/forget-password.compo
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    HighchartsChartModule
+    HighchartsChartModule,
+    LayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

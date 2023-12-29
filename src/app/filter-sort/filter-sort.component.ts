@@ -1,25 +1,31 @@
-import { Component, EventEmitter, Output, ViewChild } from '@angular/core';
+import { Component, DoCheck, EventEmitter, HostListener, OnInit, Output, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { SharedService } from '../Service/shared.service';
 import { MatPaginator } from '@angular/material/paginator';
-
+import { Platform } from '@angular/cdk/platform';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Observable } from 'rxjs';
 @Component({
   selector: 'app-filter-sort',
   templateUrl: './filter-sort.component.html',
   styleUrls: ['./filter-sort.component.scss']
 })
-export class FilterSortComponent {
+export class FilterSortComponent implements OnInit {
 
   dataSource:any;
   data:any;
   searchTerm!:string;
+
   @Output() emitChildData:EventEmitter<any> = new EventEmitter<any>();
   @Output() searchedDataEmitter: EventEmitter<any> = new EventEmitter<any>();
 
   @ViewChild(MatPaginator) paginator!:MatPaginator;
 
+  isSmallScreen:boolean = false;
 
-  constructor(private http:SharedService){}
+  constructor(private http:SharedService, private breakpointObserver:BreakpointObserver, private platform:Platform){
+    // this.isSmallScreen = this.platform.isSmallScreen;
+  }
 
   ngOnInit(){
     this.http.getData('users').subscribe((res:any)=>{
@@ -27,8 +33,18 @@ export class FilterSortComponent {
       this.dataSource.paginator = this.paginator;
       this.data = res;
 
+    });
+
+    this.breakpointObserver
+    .observe(Breakpoints.XSmall).subscribe((result)=>{
+      this.isSmallScreen = false;
+      if(result.matches){
+        this.isSmallScreen = true;
+      }
     })
+
   }
+
 
   //send data to parent
   ascendingSort(){

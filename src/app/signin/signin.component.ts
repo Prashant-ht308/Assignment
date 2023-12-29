@@ -48,6 +48,10 @@ export class SigninComponent implements OnInit {
       return user.email == email && user.password == password
     })
     if(matchingUser){
+      const url = `users/${matchingUser.id}`
+      this.http.updateData(url,{...matchingUser,lastLogin : new Date()}).subscribe((res:any)=>{
+        console.log("updated user data!")
+      })
       localStorage.setItem('currentUser',matchingUser.id);
     }
   }

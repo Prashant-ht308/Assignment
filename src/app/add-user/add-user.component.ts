@@ -55,7 +55,7 @@ export class AddUserComponent implements OnInit {
     if (this.selectedId == null) {
       const data = {
         ...this.userForm.value,
-        createdOn: new Date(),
+        createdOn: new Date()
       };
       this.http.postData('users', data).subscribe((res: any) => {
         this.toastr.success('User has been added successfully!');

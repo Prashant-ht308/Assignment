@@ -1,16 +1,30 @@
 {
   "users": [
     {
-      "firstName": "Mason",
+      "firstName": "Max",
       "lastName": "Anderson",
-      "email": "mason.anderson@example.com",
+      "email": "abc@gmail.com",
+      "phone": "555-5555",
+      "role": "Admin",
+      "status": "Active",
+      "password": "abcd123",
+      "createdOn": "2023-11-20T15:45:30.000Z",
+      "confirmPassword": "adminpass123",
+      "lastLogin": "2023-12-28T14:03:54.330Z",
+      "image": "https://cdn-icons-png.flaticon.com/128/64/64572.png",
+      "id": 9
+    },
+    {
+      "firstName": "Max",
+      "lastName": "Anderson",
+      "email": "max.anderson@example.com",
       "phone": "555-5555",
       "role": "Admin",
       "status": "Active",
       "password": "adminpass123",
+      "createdOn": "2023-11-20T15:45:30.000Z",
       "confirmPassword": "adminpass123",
-      "createdOn": "2023-12-04T09:30:45.000Z",
-      "lastLogin": "3 weeks ago",
+      "lastLogin": "2023-12-28T14:04:18.168Z",
       "image": "https://cdn-icons-png.flaticon.com/128/64/64572.png",
       "id": 10
     },
@@ -24,7 +38,7 @@
       "password": "userpass456",
       "confirmPassword": "userpass456",
       "createdOn": "2023-11-20T15:45:30.000Z",
-      "lastLogin": "1 month ago",
+      "lastLogin": "2023-12-28T14:04:41.568Z",
       "image": "https://cdn-icons-png.flaticon.com/128/64/64572.png",
       "id": 11
     },
@@ -38,7 +52,7 @@
       "password": "userpass789",
       "confirmPassword": "userpass789",
       "createdOn": "2023-11-15T12:20:00.000Z",
-      "lastLogin": "2 weeks ago",
+      "lastLogin": "2023-12-28T14:04:59.960Z",
       "image": "https://cdn-icons-png.flaticon.com/128/64/64572.png",
       "id": 12
     },
@@ -52,7 +66,7 @@
       "password": "adminpass456",
       "confirmPassword": "adminpass456",
       "createdOn": "2023-12-01T18:10:15.000Z",
-      "lastLogin": "1 week ago",
+      "lastLogin": "2023-12-28T14:05:22.935Z",
       "image": "https://cdn-icons-png.flaticon.com/128/64/64572.png",
       "id": 13
     },
@@ -66,7 +80,7 @@
       "password": "userpass012",
       "confirmPassword": "userpass012",
       "createdOn": "2023-11-25T08:55:30.000Z",
-      "lastLogin": "3 days ago",
+      "lastLogin": "2023-12-28T14:05:42.351Z",
       "image": "https://cdn-icons-png.flaticon.com/128/64/64572.png",
       "id": 14
     },
@@ -94,7 +108,7 @@
       "password": "userpass345",
       "confirmPassword": "userpass345",
       "createdOn": "2023-11-10T14:30:45.000Z",
-      "lastLogin": "2 months ago",
+      "lastLogin": "2023-12-28T14:06:12.423Z",
       "image": "https://cdn-icons-png.flaticon.com/128/64/64572.png",
       "id": 16
     },
@@ -153,6 +167,61 @@
       "lastLogin": "2 weeks ago",
       "image": "https://cdn-icons-png.flaticon.com/128/64/64572.png",
       "id": 20
+    },
+    {
+      "firstName": "Prashant",
+      "lastName": "Deshpande",
+      "email": "prashant@gmail.com",
+      "phone": "7462893387",
+      "role": "Admin",
+      "status": "Active",
+      "password": "prashant",
+      "confirmPassword": "prashant",
+      "createdOn": "2023-12-28T11:07:43.524Z",
+      "image": "https://cdn-icons-png.flaticon.com/128/64/64572.png",
+      "id": 21,
+      "lastLogin": "2023-12-29T06:21:19.323Z"
+    },
+    {
+      "firstName": "Andrew",
+      "lastName": "Phillips",
+      "email": "andrewp@gmail.com",
+      "phone": "3746383947",
+      "role": "User",
+      "status": "Inactive",
+      "password": "1234",
+      "confirmPassword": "1234",
+      "createdOn": "2023-12-28T12:29:20.048Z",
+      "lastLogin": "2 weeks ago",
+      "image": "https://cdn-icons-png.flaticon.com/128/64/64572.png",
+      "id": 22
+    },
+    {
+      "firstName": "Peter",
+      "lastName": "Parker",
+      "email": "spidey@gmail.com",
+      "phone": "1233232323",
+      "role": "Admin",
+      "status": "Active",
+      "password": "1234",
+      "confirmPassword": "1234",
+      "createdOn": "2023-12-28T14:00:28.067Z",
+      "image": "https://cdn-icons-png.flaticon.com/128/64/64572.png",
+      "id": 23,
+      "lastLogin": "2023-12-28T14:06:34.910Z"
+    },
+    {
+      "firstName": "Stephen",
+      "lastName": "Strange",
+      "email": "drstrange@gmail.com",
+      "phone": "1928476598",
+      "role": "Admin",
+      "status": "Active",
+      "password": "0000",
+      "confirmPassword": "0000",
+      "createdOn": "2023-12-28T14:17:17.579Z",
+      "image": "https://cdn-icons-png.flaticon.com/128/64/64572.png",
+      "id": 24
     }
   ]
 }

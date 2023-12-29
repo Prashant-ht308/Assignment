@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from '../Service/shared.service';
 import * as Highcharts from 'highcharts';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,7 +10,7 @@ import * as Highcharts from 'highcharts';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private http:SharedService){}
+  constructor(private http:SharedService, private breakpointObserver: BreakpointObserver){}
 
   dataSource:any = []
   totalUsers:any = [];
@@ -29,6 +30,16 @@ export class DashboardComponent implements OnInit {
     });
 
     // this.updateChartData();
+    this.breakpointObserver
+    .observe(Breakpoints.XSmall).subscribe((result)=>{
+      if(result.matches){
+        this.chartForSmallScreen();
+        console.log("running small")
+      }else{
+        this.resetChartSize();
+        console.log("running large")
+      }
+    })
   }
 
   Highcharts = Highcharts
@@ -36,7 +47,9 @@ export class DashboardComponent implements OnInit {
 
   barChart:any = {
     chart : {
-      type : 'column'
+      type : 'column',
+      width : 500,
+      height : 350
     },
 
     title : {
@@ -73,6 +86,17 @@ export class DashboardComponent implements OnInit {
     ]
   }
 
+
+
+  chartForSmallScreen(){
+    this.barChart.chart.set = 200;
+    this.barChart.chart.height = 200;
+  }
+
+  resetChartSize(){
+    this.barChart.chart.width = 500;
+    this.barChart.chart.height = 350;
+  }
   // chartData:any[] = []
   // updateChartData(){
 

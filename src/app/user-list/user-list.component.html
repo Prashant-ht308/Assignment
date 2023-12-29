@@ -61,7 +61,7 @@
       <!-- last login  -->
       <ng-container matColumnDef="lastLogin">
         <th mat-header-cell *matHeaderCellDef> Last Login </th>
-        <td mat-cell *matCellDef="let element"> {{element.lastLogin}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.lastLogin | lastlogin}} </td>
       </ng-container>
 
       <!-- status  -->
